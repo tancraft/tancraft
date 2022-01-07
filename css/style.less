@@ -9,7 +9,7 @@
 @font-txt: "Roboto", sans-serif;
 @font-size: 100%;
 /*----------------------------------mixins*/
-.center(@width: 60%) {
+.center(@width: 70%) {
   width: @width;
   margin: 0 auto;
 }
@@ -73,6 +73,8 @@ p {
 }
 
 h2 {
+  font-size: 2.5rem;
+  letter-spacing: 0.3rem;
   margin-bottom: 2rem;
   font-weight: 300;
 }
@@ -85,7 +87,7 @@ h3 {
 .logo {
   display: block;
   max-width: 9rem;
-  svg{
+  svg {
     fill: @lighter-color;
   }
 }
@@ -130,7 +132,7 @@ header {
   min-height: 90vh;
   padding-top: 8rem;
   > div {
-    .center;
+    .center(60%);
     padding: 5rem;
     letter-spacing: 0.3rem;
     article {
@@ -154,21 +156,37 @@ header {
   }
 }
 
+.btn {
+  display: inline-block;
+  padding: 0.4rem 2rem;
+  border: 1px solid @primary-color;
+  &,
+  &:visited {
+    color: @primary-color;
+  }
+}
+
+.plus {
+  &:extend(.flex);
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.5rem 0;
+  span,
+  svg {
+    display: inline-block;
+    font-size: 0.9rem;
+  }
+  svg {
+    fill: @lighter-color;
+  }
+}
+
 section {
   padding: 5rem 0;
   > div {
     &:extend(.flex);
     .center;
     justify-content: space-between;
-  }
-}
-
-.works,
-.services {
-  > div {
-    article {
-      width: calc(25% - 10px);
-    }
   }
 }
 
@@ -194,30 +212,66 @@ section {
 }
 
 .works {
+  > div {
+    article {
+      width: calc(25% - 20px);
+      h2 {
+        font-size: 1.4rem;
+      }
+    }
+  }
   > h2 {
     color: @darker-color;
+  }
+  .btn {
+    padding: 0.8rem 6rem;
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+    margin-top: 3rem;
+    border: 2px solid @primary-color;
   }
 }
 .card {
   background-color: @darker-color;
-  padding: .8rem;
-  h2{
-    padding: .8rem 0;
+  padding: 0.8rem;
+  h2 {
+    padding: 0.8rem 0;
     border-bottom: 2px solid @lighter-color;
   }
 }
 
-.plus{
-  &:extend(.flex);
-  align-items: center;
-  justify-content: flex-end;
-  padding: .5rem 0;
-  span, svg{
-    display: inline-block;
-    font-size: .9rem;
-  }
-  svg{
-    fill: @lighter-color;
+.services {
+  > div {
+    article {
+      width: calc(25% - 40px);
+      overflow: hidden;
+      padding: 1rem;
+      border: 4px solid @lighter-color;
+      h2 {
+        margin-bottom: 0;
+        padding: 1.5rem 0;
+        font-size: 1.3rem;
+        border-top: 2px solid @lighter-color;
+      }
+      .btn {
+        transform: scaleY(0);
+        transform-origin: bottom 0;
+        transition: transform 0.3s;
+      }
+      i {
+        padding: 0.4rem 0;
+        font-size: 3rem;
+        transition: font-size 0.3s;
+      }
+      &:hover {
+        i {
+          font-size: 2rem;
+        }
+        .btn {
+          transform: scaleY(1);
+        }
+      }
+    }
   }
 }
 
@@ -226,25 +280,112 @@ footer {
   background-color: @primary-color;
 }
 
+.contact {
+  > div {
+    min-height: 10rem;
+    h2 {
+      font-family: @font-txt;
+      font-size: 2.5rem;
+      letter-spacing: 0.3rem;
+      margin-bottom: 0;
+    }
+    .btn {
+      padding: 0.8rem 6rem;
+      align-self: flex-end;
+      height: fit-content;
+      font-size: 1.6rem;
+      letter-spacing: 0.2rem;
+      border: 1px solid @lighter-color;
+      &,
+      &:visited {
+        color: @lighter-color;
+      }
+    }
+  }
+}
+
 .blog {
   > div {
     article {
-      width: calc((100% / 3) - 10px);
+      width: calc((100% / 3) - 20px);
+      text-align: left;
+      &,
+      h3,
+      p {
+        margin-bottom: 1.5rem;
+      }
     }
   }
 }
 
 footer {
-  padding: 2rem 0;
+  padding: 1rem 0;
   > div {
+    &:extend(.flex);
+    justify-content: center;
     &:first-of-type {
-      &:extend(.flex);
+      .center;
+      justify-content: space-between;
+      text-align: left;
+      margin-bottom: 1rem;
+      letter-spacing: 0.2rem;
+      h3 {
+        margin-bottom: .8rem;
+      }
+      ul {
+        li {
+          a {
+            padding: 0.4rem 0;
+          }
+        }
+      }
     }
     nav {
       ul {
         &:extend(.flex);
         width: 100%;
       }
+    }
+    .infos {
+      li {
+        a {
+          &:extend(.flex);
+          align-items: center;
+          span,
+          i {
+            display: block;
+          }
+          i {
+            margin-right: 0.4rem;
+          }
+        }
+      }
+    }
+    .sociaux {
+      li {
+        a {
+          i {
+            padding: 0.5rem;
+            font-size: 1.5rem;
+          }
+        }
+        &:first-of-type {
+          a {
+            i {
+              padding-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .copyright {
+    &:extend(.flex);
+    padding-right: 1.5rem;
+    align-items: center;
+    span,
+    i {
+      display: block;
     }
   }
 }
