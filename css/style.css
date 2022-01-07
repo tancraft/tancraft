@@ -1,0 +1,243 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOjCnqEu92Fr1Mu51TjARc9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOjCnqEu92Fr1Mu51S7ABc9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmSU5vAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmEU9vAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Spinnaker';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/spinnaker/v12/w8gYH2oyX-I0_rvR6Hmn3A.ttf) format('truetype');
+}
+/*----------------------------------mixins*/
+/*----------------------------------extends*/
+.flex,
+.main-nav > div,
+.main-nav > div ul,
+section > div,
+.plus,
+footer > div:first-of-type,
+footer > div nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+/*-------------------------------------reset*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+figure {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+html {
+  font-size: 100%;
+  font-family: "Spinnaker", sans-serif;
+  scroll-behavior: smooth;
+}
+img,
+video,
+canvas,
+figure,
+audio,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+a,
+a:visited {
+  color: #e6e8e6;
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: inside;
+  list-style-type: none;
+}
+/*-------------------------------------layout*/
+h1,
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+}
+h2 {
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+.logo {
+  display: block;
+  max-width: 9rem;
+}
+.logo svg {
+  fill: #e6e8e6;
+}
+.arrow {
+  display: inline-block;
+  max-width: 3rem;
+}
+.arrow svg {
+  fill: #e6e8e6;
+}
+#burger {
+  display: none;
+}
+.container {
+  text-align: center;
+  background-color: #080708;
+  color: #e6e8e6;
+}
+.main-nav {
+  padding: 2rem;
+}
+.main-nav > div {
+  justify-content: space-between;
+  align-items: center;
+}
+.main-nav > div ul li a {
+  display: block;
+  padding: 0.5rem 1.5rem;
+}
+header {
+  min-height: 90vh;
+  padding-top: 8rem;
+}
+header > div {
+  width: 60%;
+  margin: 0 auto;
+  padding: 5rem;
+  letter-spacing: 0.3rem;
+}
+header > div article {
+  margin-bottom: 10rem;
+  text-align: right;
+}
+header h3 {
+  font-size: 2rem;
+  font-weight: 300;
+}
+header h3 span:last-of-type {
+  display: inline-block;
+  color: #087ca7;
+}
+header p {
+  padding: 2rem 0;
+  font-size: 3rem;
+}
+section {
+  padding: 5rem 0;
+}
+section > div {
+  width: 60%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.works > div article,
+.services > div article {
+  width: calc(25% - 10px);
+}
+.who,
+.works {
+  background-color: #e6e8e6;
+}
+.who {
+  color: #080708;
+}
+.who > div {
+  width: 40%;
+  margin: 0 auto;
+}
+.who a {
+  display: block;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.who a,
+.who a:visited {
+  color: #080708;
+}
+.works > h2 {
+  color: #080708;
+}
+.card {
+  background-color: #080708;
+  padding: 0.8rem;
+}
+.card h2 {
+  padding: 0.8rem 0;
+  border-bottom: 2px solid #e6e8e6;
+}
+.plus {
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.5rem 0;
+}
+.plus span,
+.plus svg {
+  display: inline-block;
+  font-size: 0.9rem;
+}
+.plus svg {
+  fill: #e6e8e6;
+}
+.contact,
+footer {
+  background-color: #087ca7;
+}
+.blog > div article {
+  width: calc((100% / 3) - 10px);
+}
+footer {
+  padding: 2rem 0;
+}
+footer > div nav ul {
+  width: 100%;
+}
+@media screen and (max-width: 600px) {
+  header {
+    min-height: 80vh;
+  }
+  header > div {
+    width: 90%;
+    margin: 0 auto;
+  }
+  header h3 {
+    font-size: 1rem;
+  }
+  header p {
+    font-size: 2rem;
+  }
+}
