@@ -38,6 +38,7 @@
 .flex,
 .main-nav > div,
 .main-nav > div ul,
+header,
 .plus,
 section > div,
 footer > div,
@@ -125,7 +126,10 @@ h3 {
   color: #e6e8e6;
 }
 .main-nav {
+  position: fixed;
+  width: 100%;
   padding: 2rem;
+  background-color: #080708;
 }
 .main-nav > div {
   justify-content: space-between;
@@ -136,8 +140,9 @@ h3 {
   padding: 0.5rem 1.5rem;
 }
 header {
-  min-height: 90vh;
-  padding-top: 8rem;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 header > div {
   width: 60%;
@@ -184,7 +189,7 @@ header p {
   fill: #e6e8e6;
 }
 section {
-  padding: 5rem 0;
+  padding: 7rem 0;
 }
 section > div {
   width: 70%;
@@ -212,7 +217,7 @@ section > div {
   color: #080708;
 }
 .works > div article {
-  width: calc(25% - 20px);
+  width: calc(25% - 2rem);
 }
 .works > div article h2 {
   font-size: 1.4rem;
@@ -236,7 +241,7 @@ section > div {
   border-bottom: 2px solid #e6e8e6;
 }
 .services > div article {
-  width: calc(25% - 40px);
+  width: calc(25% - 3.5rem);
   overflow: hidden;
   padding: 1rem;
   border: 4px solid #e6e8e6;
@@ -346,17 +351,40 @@ footer .copyright i {
   display: block;
 }
 @media screen and (max-width: 600px) {
-  header {
-    min-height: 80vh;
-  }
   header > div {
     width: 90%;
     margin: 0 auto;
+    padding: 0;
   }
   header h3 {
     font-size: 1rem;
   }
   header p {
     font-size: 2rem;
+  }
+  section > div {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .who > div {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .works > div article {
+    width: calc(100% - 1rem);
+    margin-bottom: 1rem;
+  }
+  .works > h2 {
+    color: #080708;
+  }
+  .services > div article {
+    width: calc(50% - 1rem);
+    margin-bottom: 1rem;
+  }
+  .services > div article h2 {
+    font-size: 1.1rem;
+  }
+  .blog > div article {
+    min-width: 100%;
   }
 }
