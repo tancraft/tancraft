@@ -1,54 +1,21 @@
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 300;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOjCnqEu92Fr1Mu51TjARc9.ttf) format('truetype');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,300;0,400;0,600;1,300;1,500&display=swap");
+.uppercase, h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: uppercase;
 }
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOjCnqEu92Fr1Mu51S7ABc9.ttf) format('truetype');
+
+.letter-spacing {
+  letter-spacing: 0.1rem;
 }
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmSU5vAw.ttf) format('truetype');
+
+.center {
+  max-width: 80%;
+  margin: 0 auto;
 }
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmEU9vAw.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Spinnaker';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/spinnaker/v12/w8gYH2oyX-I0_rvR6Hmn3A.ttf) format('truetype');
-}
-/*----------------------------------mixins*/
-/*----------------------------------extends*/
-.flex,
-.main-nav > div,
-.main-nav > div ul,
-header,
-.plus,
-section > div,
-footer > div,
-footer > div nav ul,
-footer > div .infos li a,
-footer .copyright {
-  display: flex;
-  flex-wrap: wrap;
-}
-/*-------------------------------------reset*/
+
 *,
 ::before,
 ::after {
@@ -56,335 +23,108 @@ footer .copyright {
   padding: 0;
   box-sizing: border-box;
 }
-figure {
-  margin-block-start: 0;
-  margin-block-end: 0;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-}
+
 html {
-  font-size: 100%;
-  font-family: "Spinnaker", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: "Fira Sans", sans-serif;
   scroll-behavior: smooth;
 }
+
 img,
-video,
+picture,
 canvas,
-figure,
-audio,
 svg {
+  display: block;
   max-width: 100%;
-  height: auto;
+  max-height: 100vh;
 }
+
 a,
 a:visited {
-  color: #e6e8e6;
   text-decoration: none;
 }
+
 ul,
 ol {
   list-style: inside;
   list-style-type: none;
 }
-/*-------------------------------------layout*/
+
+button,
+input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  background-color: hsl(0deg, 0%, 100%);
+  color: hsl(0deg, 0%, 0%);
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body input,
+body button {
+  color: hsl(0deg, 0%, 0%);
+}
+body a,
+body a:visited {
+  color: hsl(0deg, 0%, 0%);
+}
+@media (max-width: 599px) {
+  body {
+    background-color: pink;
+  }
+}
+
 h1,
-p {
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  font-weight: 300;
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 400;
 }
-h2 {
-  font-size: 2.5rem;
-  letter-spacing: 0.3rem;
-  margin-bottom: 2rem;
-  font-weight: 300;
-}
-h3 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-}
-.logo {
-  display: block;
-  max-width: 9rem;
-}
-.logo svg {
-  fill: #e6e8e6;
-}
-.arrow {
-  display: inline-block;
-  max-width: 3rem;
-}
-.arrow svg {
-  fill: #e6e8e6;
-}
-#burger {
-  display: none;
-}
+
 .container {
-  text-align: center;
-  background-color: #080708;
-  color: #e6e8e6;
-}
-.main-nav {
-  position: fixed;
-  width: 100%;
-  padding: 2rem;
-  background-color: #080708;
-}
-.main-nav > div {
-  justify-content: space-between;
-  align-items: center;
-}
-.main-nav > div ul li a {
-  display: block;
-  padding: 0.5rem 1.5rem;
-}
-header {
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-header > div {
-  width: 60%;
-  margin: 0 auto;
-  padding: 5rem;
-  letter-spacing: 0.3rem;
-}
-header > div article {
-  margin-bottom: 10rem;
-  text-align: right;
-}
-header h3 {
-  font-size: 2rem;
-  font-weight: 300;
-}
-header h3 span:last-of-type {
-  display: inline-block;
-  color: #087ca7;
-}
-header p {
-  padding: 2rem 0;
-  font-size: 3rem;
-}
-.btn {
-  display: inline-block;
-  padding: 0.4rem 2rem;
-  border: 1px solid #087ca7;
-}
-.btn,
-.btn:visited {
-  color: #087ca7;
-}
-.plus {
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0.5rem 0;
-}
-.plus span,
-.plus svg {
-  display: inline-block;
-  font-size: 0.9rem;
-}
-.plus svg {
-  fill: #e6e8e6;
-}
-section {
-  padding: 7rem 0;
-}
-section > div {
-  width: 70%;
-  margin: 0 auto;
-  justify-content: space-between;
-}
-.who,
-.works {
-  background-color: #e6e8e6;
-}
-.who {
-  color: #080708;
-}
-.who > div {
-  width: 40%;
-  margin: 0 auto;
-}
-.who a {
-  display: block;
-  width: 100%;
-  margin-bottom: 2rem;
-}
-.who a,
-.who a:visited {
-  color: #080708;
-}
-.works > div article {
-  width: calc(25% - 2rem);
-}
-.works > div article h2 {
-  font-size: 1.4rem;
-}
-.works > h2 {
-  color: #080708;
-}
-.works .btn {
-  padding: 0.8rem 6rem;
-  font-size: 2rem;
-  letter-spacing: 0.3rem;
-  margin-top: 3rem;
-  border: 2px solid #087ca7;
-}
-.card {
-  background-color: #080708;
-  padding: 0.8rem;
-}
-.card h2 {
-  padding: 0.8rem 0;
-  border-bottom: 2px solid #e6e8e6;
-}
-.services > div article {
-  width: calc(25% - 3.5rem);
-  overflow: hidden;
-  padding: 1rem;
-  border: 4px solid #e6e8e6;
-}
-.services > div article h2 {
-  margin-bottom: 0;
-  padding: 1.5rem 0;
-  font-size: 1.3rem;
-  border-top: 2px solid #e6e8e6;
-}
-.services > div article .btn {
-  transform: scaleY(0);
-  transform-origin: bottom 0;
-  transition: transform 0.3s;
-}
-.services > div article i {
-  padding: 0.4rem 0;
-  font-size: 3rem;
-  transition: font-size 0.3s;
-}
-.services > div article:hover i {
-  font-size: 2rem;
-}
-.services > div article:hover .btn {
-  transform: scaleY(1);
-}
-.contact,
-footer {
-  background-color: #087ca7;
-}
-.contact > div {
-  min-height: 10rem;
-}
-.contact > div h2 {
-  font-family: "Roboto", sans-serif;
-  font-size: 2.5rem;
-  letter-spacing: 0.3rem;
-  margin-bottom: 0;
-}
-.contact > div .btn {
-  padding: 0.8rem 6rem;
-  align-self: flex-end;
-  height: fit-content;
-  font-size: 1.6rem;
-  letter-spacing: 0.2rem;
-  border: 1px solid #e6e8e6;
-}
-.contact > div .btn,
-.contact > div .btn:visited {
-  color: #e6e8e6;
-}
-.blog > div article {
-  width: calc((100% / 3) - 20px);
-  text-align: left;
-}
-.blog > div article,
-.blog > div article h3,
-.blog > div article p {
-  margin-bottom: 1.5rem;
-}
-footer {
-  padding: 1rem 0;
-}
-footer > div {
-  justify-content: center;
-}
-footer > div:first-of-type {
-  width: 70%;
-  margin: 0 auto;
-  justify-content: space-between;
-  text-align: left;
-  margin-bottom: 1rem;
-  letter-spacing: 0.2rem;
-}
-footer > div:first-of-type h3 {
-  margin-bottom: 0.8rem;
-}
-footer > div:first-of-type ul li a {
-  padding: 0.4rem 0;
-}
-footer > div nav ul {
   width: 100%;
 }
-footer > div .infos li a {
-  align-items: center;
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
 }
-footer > div .infos li a span,
-footer > div .infos li a i {
+.card-container > div {
+  max-width: calc(50% - 10px);
+}
+@media (max-width: 599px) {
+  .card-container > div {
+    max-width: 100%;
+  }
+}
+
+nav > ul {
+  width: 100%;
+  display: flex;
+}
+nav > ul > li > a {
   display: block;
+  padding: 10px 20px;
 }
-footer > div .infos li a i {
-  margin-right: 0.4rem;
-}
-footer > div .sociaux li a i {
-  padding: 0.5rem;
-  font-size: 1.5rem;
-}
-footer > div .sociaux li:first-of-type a i {
-  padding-left: 0;
-}
-footer .copyright {
-  padding-right: 1.5rem;
-  align-items: center;
-}
-footer .copyright span,
-footer .copyright i {
-  display: block;
-}
-@media screen and (max-width: 600px) {
-  header > div {
-    width: 90%;
-    margin: 0 auto;
-    padding: 0;
-  }
-  header h3 {
-    font-size: 1rem;
-  }
-  header p {
-    font-size: 2rem;
-  }
-  section > div {
-    width: 90%;
-    margin: 0 auto;
-  }
-  .who > div {
-    width: 90%;
-    margin: 0 auto;
-  }
-  .works > div article {
-    width: calc(100% - 1rem);
-    margin-bottom: 1rem;
-  }
-  .works > h2 {
-    color: #080708;
-  }
-  .services > div article {
-    width: calc(50% - 1rem);
-    margin-bottom: 1rem;
-  }
-  .services > div article h2 {
-    font-size: 1.1rem;
-  }
-  .blog > div article {
-    min-width: 100%;
-  }
-}
+
+/*# sourceMappingURL=style.css.map */

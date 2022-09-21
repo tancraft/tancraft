@@ -1,0 +1,98 @@
+@mixin fs_calc($fs) {
+  font-size: $fs;
+  line-height: calc($fs * 1.5);
+}
+
+@mixin theme_choice($dark: false) {
+  @if $dark {
+    background-color: hsl($color-dark);
+    color: hsl($color-white);
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    input,
+    button {
+      color: hsl($color-white);
+    }
+    a,
+    a:visited {
+      color: hsl($color-white);
+    }
+  } @else {
+    background-color: hsl($color-white);
+    color: hsl($color-dark);
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    input,
+    button {
+      color: hsl($color-dark);
+    }
+    a,
+    a:visited {
+      color: hsl($color-dark);
+    }
+  }
+}
+
+@mixin for-display($display) {
+  @if $display == d-flex {
+    display: flex;
+    flex-wrap: wrap;
+    @content;
+  } @else if $display == d-inline {
+    @content;
+  } @else if $display == d-block {
+    display: block;
+    @content;
+  } @else if $display == d-i-block {
+    display: inline-block;
+    @content;
+  } @else if $display == d-grid {
+    display: grid;
+    @content;
+  }
+}
+
+@mixin gallery($col, $gap) {
+  @include for-display(d-flex) {
+    gap: $gap;
+    justify-content: space-between;
+  }
+  > div {
+    max-width: calc(100% / $col - $gap);
+    @include for-size(phone-only) {
+      max-width: 100%;
+    }
+  }
+}
+
+//medias queries
+
+@mixin for-size($size) {
+  @if $size == phone-only {
+    @media (max-width: 599px) {
+      @content;
+    }
+  } @else if $size == tablet-portrait-up {
+    @media (min-width: 600px) {
+      @content;
+    }
+  } @else if $size == tablet-landscape-up {
+    @media (min-width: 900px) {
+      @content;
+    }
+  } @else if $size == desktop-up {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $size == big-desktop-up {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+body {
+  @include theme_choice();
+  @include for-size(phone-only) {
+    background-color: pink;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @extend .uppercase;
+  font-weight: 400;
+}
+
+.container {
+  width: 100%;
+}
+
+.card-container {
+  @include gallery(2, $gap);
+}
+
+nav > ul {
+  width: 100%;
+  display: flex;
+  > li > a {
+    display: block;
+    padding: $gap calc($gap * 2);
+  }
+}
